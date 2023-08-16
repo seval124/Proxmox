@@ -53,13 +53,8 @@ function default_settings() {
 
 function update_script() {
 header_info
-if [[ ! -d jellyfin-vue ]]; then msg_error "No ${APP} Installation Found!"; exit; fi
-msg_info "Cloning Git"
-git clone https://github.com/jellyfin/jellyfin-vue.git
-cd jellyfin-vue
-npm install
-npm run build
-msg_info "Updating $APP LXC"
+if [[ ! -d ./jellyfin-vue ]]; then msg_error "No ${APP} Installation Found!"; exit; fi
+msg_info "Updating $APP Jellyfin-Bue"
 apt-get update &>/dev/null
 apt-get -y upgrade &>/dev/null
 msg_ok "Updated $APP LXC"
