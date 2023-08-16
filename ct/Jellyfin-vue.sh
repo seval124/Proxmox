@@ -53,7 +53,7 @@ function default_settings() {
 
 function update_script() {
 header_info
-if [[ ! -f /etc/apt/sources.list.d/sonarr.list ]]; then msg_error "No ${APP} Installation Found!"; exit; fi
+if [[ ! -d jellyfin-vue ]]; then msg_error "No ${APP} Installation Found!"; exit; fi
 msg_info "Cloning Git"
 git clone https://github.com/jellyfin/jellyfin-vue.git
 cd jellyfin-vue
